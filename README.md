@@ -4,12 +4,12 @@
 
 # how to use
 
-添加服务列表到一个种子
+逐个添加
 ``` shell
 python add_tracker.py trackersFile.txt xxx.torrent
 ```
 
-添加到文件夹'test'内的所有种子
+批量添加文件夹内的所有种子
 ``` shell
 python add_tracker.py trackersFile.txt test
 ```
