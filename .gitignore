@@ -1,0 +1,6 @@
+*.torrent
+/test
+*.swp
+.DS_Store
+*.pyc
+
