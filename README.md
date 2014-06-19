@@ -11,5 +11,5 @@ python add_tracker.py trackersFile.txt xxx.torrent
 
 批量添加文件夹内的所有种子
 ``` shell
-python add_tracker.py trackersFile.txt test
+python add_tracker_dir.py trackersFile.txt test
 ```
