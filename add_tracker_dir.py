@@ -31,13 +31,16 @@ for torrent_file_name in os.listdir(sys.argv[2]):
     trackers_list[:] = (value for value in tracker_file.read().split("\n") if value != '')
     decoded_data = bencode.bdecode(torrent_file.read())
 
-    print "Trackers Before: "
-    for tracker in decoded_data['announce-list']:
-        print tracker
+    print "Trackers Before: "#,decoded_data, type(decoded_data)
+    # for tracker in decoded_data['announce-list']:
+    #     print tracker
 
     for tracker in trackers_list:
-        if tracker not in decoded_data['announce-list']:
-            decoded_data['announce-list'].append([tracker])
+        if decoded_data.has_key('announce-list'):
+            if tracker not in decoded_data['announce-list']:
+                decoded_data['announce-list'].append([tracker])
+        else:
+            decoded_data['announce-list']=[tracker]
 
     print "Now, the trackers in the torrent are: "
     for tracker in decoded_data['announce-list']:
