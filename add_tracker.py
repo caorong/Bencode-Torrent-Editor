@@ -26,8 +26,11 @@ for tracker in decoded_data['announce-list']:
     print tracker
 
 for tracker in trackers_list:
-    if tracker not in decoded_data['announce-list']:
-        decoded_data['announce-list'].append([tracker])
+    if decoded_data.has_key('announce-list'):
+        if tracker not in decoded_data['announce-list']:
+            decoded_data['announce-list'].append([tracker])
+    else:
+            decoded_data['announce-list']=[tracker]
 
 print "Now, the trackers in the torrent are: "
 for tracker in decoded_data['announce-list']:
